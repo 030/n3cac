@@ -12,6 +12,7 @@
 ![Contributors](https://img.shields.io/github/contributors/030/n3cac.svg)
 ![Commit activity](https://img.shields.io/github/commit-activity/m/030/n3cac.svg)
 ![Last commit](https://img.shields.io/github/last-commit/030/n3cac.svg)
+[![BCH compliance](https://bettercodehub.com/edge/badge/030/n3cac?branch=master)](https://bettercodehub.com/results/030/n3cac)
 ![Release date](https://img.shields.io/github/release-date/030/n3cac.svg)
 ![Latest Production Release Version](https://img.shields.io/github/release/030/n3cac.svg)
 
