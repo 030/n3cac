@@ -1,31 +1,17 @@
 #!/bin/bash -e
 
-TOOL="${1:-./n3cac}"
-DELIVERABLE="${DELIVERABLE:-n3cac}"
-
-validate(){
-    if [ -z "${TOOL}" ]; then
-        echo "No deliverable defined. Assuming that 'go run main.go'
-should be run."
-        TOOL="go run main.go"
-    fi
+nexus(){
+  source <(curl -L https://gist.githubusercontent.com/030/666c99d8fc86e9f1cc0ad216e0190574/raw/c5faae82960c46c232a099231166e1b2fc3bb0bb/nexus-docker.sh)
 }
 
-build(){
-  echo "TRAVIS_TAG: '$TRAVIS_TAG' DELIVERABLE: '$DELIVERABLE'"
-  go build -ldflags "-X n3cac/cmd.Version=${TRAVIS_TAG}" -o "${DELIVERABLE}"
-  $SHA512_CMD "${TOOL}" > "${DELIVERABLE}.sha512.txt"
-  chmod +x "${DELIVERABLE}"
-}
-
-cleanup(){
-  echo "cleanup"
+delete(){
+  echo "Deleting repositories..."
+  for r in maven-public maven-central maven-releases maven-snapshots nuget-group nuget-hosted nuget.org-proxy; do curl -u admin:$PASSWORD -X DELETE "http://localhost:9999/service/rest/beta/repositories/${r}" -H  "accept: application/json" -v; done
 }
 
 main(){
-  validate
-  build
+  nexus
+  delete
 }
 
-trap cleanup EXIT
 main
