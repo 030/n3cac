@@ -2,5 +2,11 @@ matrix:
   include:
   - os: linux
     dist: bionic
+    env:
+      - NEXUS_VERSION=latest
+  - os: linux
+    dist: bionic
+    env:
+      - NEXUS_VERSION=3.25.0
 script:
-  - ./integration-tests.sh
+  - ./integration-tests.sh $NEXUS_VERSION

@@ -1,9 +1,11 @@
 #!/bin/bash -e
 
+NEXUS_VERSION="${1:-3.25.0}"
+
 nexus(){
   curl -L https://gist.githubusercontent.com/030/666c99d8fc86e9f1cc0ad216e0190574/raw/c5faae82960c46c232a099231166e1b2fc3bb0bb/nexus-docker.sh -o start.sh
   chmod +x start.sh
-  source ./start.sh 3.25.0
+  source ./start.sh $NEXUS_VERSION
 }
 
 delete(){
