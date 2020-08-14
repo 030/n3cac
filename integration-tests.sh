@@ -83,6 +83,14 @@ createUser(){
        --data "{\"userId\": \"${1}\",\"firstName\": \"${1}\",\"lastName\": \"${2}\",\"emailAddress\": \"${3}\",\"password\": \"${4}\",\"status\": \"active\",\"roles\": [\"nx-admin\"]}"
 }
 
+role(){
+  echo "Creating role..."
+  curl -v -u admin:$PASSWORD -X POST "${URL}/service/rest/beta/security/roles" \
+       -H  "accept: application/json" \
+       -H  "Content-Type: application/json" \
+       -d "{\"id\": \"${1}\",\"name\": \"${1}\",\"privileges\": [\"${2}\"]}"
+}
+
 debug(){
   echo $PASSWORD
   sleep 600
