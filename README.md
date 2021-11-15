@@ -1,6 +1,6 @@
 
 ========
-ARCHIVED - FUNCTIONALTIY HAS BEEN ADDED TO [N3DR](github.com/030/n3dr)
+ARCHIVED - FUNCTIONALTIY HAS BEEN ADDED TO [N3DR](https://github.com/030/n3dr)
 ========
 
 # n3cac
