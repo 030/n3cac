@@ -1,3 +1,8 @@
+
+========
+ARCHIVED - FUNCTIONALTIY HAS BEEN ADDED TO [N3DR](github.com/030/n3dr)
+========
+
 # n3cac
 
 [![Build Status](https://travis-ci.org/030/n3cac.svg?branch=master)](https://travis-ci.org/030/n3cac)
